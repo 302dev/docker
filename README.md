@@ -1,5 +1,7 @@
 # 302 Dev Docker images
 
+[![CircleCI](https://circleci.com/gh/302dev/docker/tree/master.svg?style=svg)](https://circleci.com/gh/302dev/docker/tree/master)
+
 Docker images use for LAMP environments.
 
 These are [Docker](https://hub.docker.com/) images that are designed to create a LAMP environment.
