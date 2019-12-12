@@ -1,0 +1,17 @@
+test:
+    build: images/tests/.
+    dockerfile: Dockerfile
+    container_name: ci_test
+    links:
+        - ci_bionic-php7.2-cli
+        - ci_bionic-php7.3-cli
+
+ci_bionic-php7.2-cli:
+    build: .
+    dockerfile: ./images/bionic/php-7.2/Dockerfile
+    container_name: ci_bionic-php7.2-cli
+
+ci_bionic-php7.3-cli:
+    build: .
+    dockerfile: ./images/bionic/php-7.3/Dockerfile
+    container_name: ci_bionic-php7.3-cli
