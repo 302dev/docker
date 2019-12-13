@@ -4,7 +4,7 @@
 
 FROM ubuntu:xenial
 
-ARG codename='bionic'
+ARG codename='xenial'
 ARG pv='7.3'
 
 # Fixes some weird terminal issues such as broken clear / CTRL+L
