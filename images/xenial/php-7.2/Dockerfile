@@ -19,7 +19,7 @@ RUN apt-get update --fix-missing \
     && apt-get install -y --no-install-recommends gnupg software-properties-common apt-utils
 
 # Include ondrej/php
-RUN && echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu $codename main" > /etc/apt/sources.list.d/ondrej-php.list \
+RUN echo "deb http://ppa.launchpad.net/ondrej/php/ubuntu $codename main" > /etc/apt/sources.list.d/ondrej-php.list \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update --fix-missing
 
