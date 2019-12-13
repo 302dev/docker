@@ -27,11 +27,11 @@ RUN add-apt-repository ppa:ondrej/php \
 RUN apt-get -yq install git wget curl zlib1g-dev libicu-dev libzip-dev
 
 # Install the initial php$pv
-RUN apt-get -yq install php$pv php$pv-dev
+RUN apt-get -yq install php$pv php$pv-dev  php$pv-common
 
 # Install packages specific to this php build
 RUN apt-get -yq install \
-    && php$pv-xdebug php$pv-intl \
+    && php$pv-intl \
     && php$pv-mbstring php$pv-dom php$pv-simplexml \
     && php$pv-curl php$pv-mysql php$pv-soap php$pv-gd
 
