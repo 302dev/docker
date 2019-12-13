@@ -14,10 +14,12 @@ ENV DEBIAN_FRONTEND noninteractive
 
 ENV LC_ALL=C.UTF-8
 
-# General updates, and include ondrej
+# General updates
 RUN apt-get update --fix-missing \
-    && apt-get install -y --no-install-recommends gnupg software-properties-common \
-    && add-apt-repository ppa:ondrej/php \
+    && apt-get install -y --no-install-recommends gnupg software-properties-common apt-utils
+
+# Include ondrej/php
+RUN add-apt-repository ppa:ondrej/php \
     && apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C \
     && apt-get update --fix-missing
 
