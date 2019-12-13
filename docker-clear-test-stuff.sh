@@ -35,7 +35,7 @@ for line in $( docker images | sed -n '1!p' ); do
     imageID=$(echo ${line} | awk '{print $3}')
     [[ ${imageName} =~ ^(ci_|\<none\>) ]] && \
         echo "Removing image: ${imageName} - ${imageID}" && \
-        docker rmi ${imageName}
+        docker rmi ${imageID}
 done
 
 docker images
