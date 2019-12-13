@@ -2,7 +2,7 @@
 # 302dev/bionic:php7.3-cli #
 ############################
 
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 
 FROM php:7.3-cli
 

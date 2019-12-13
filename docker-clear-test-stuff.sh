@@ -14,6 +14,8 @@ for line in $( docker ps -a | sed -n '1!p' ); do
         docker stop ${containerID}
 done
 
+docker rm $(docker ps -a -q -f status=exited)
+
 # Removing test containers
 echo "Removing Test containers"
 for line in $( docker ps -a | sed -n '1!p' ); do
@@ -24,6 +26,8 @@ for line in $( docker ps -a | sed -n '1!p' ); do
         docker rm ${containerID}
 done
 
+docker ps -a
+
 # Remove Test images
 echo "Removing Test images"
 for line in $( docker images | sed -n '1!p' ); do
@@ -31,5 +35,7 @@ for line in $( docker images | sed -n '1!p' ); do
     imageID=$(echo ${line} | awk '{print $3}')
     [[ ${imageName} =~ ^(ci_|\<none\>) ]] && \
         echo "Removing image: ${imageName} - ${imageID}" && \
-        docker rmi ${imageID}
+        docker rmi ${imageName}
 done
+
+docker images

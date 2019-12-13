@@ -1,10 +1,10 @@
 ############################
-# 302dev/bionic:php7.3-cli #
+# 302dev/bionic:php7.2-cli #
 ############################
 
-FROM ubuntu:bionic
+FROM ubuntu:xenial
 
-FROM php:7.3-cli
+FROM php:7.2-cli
 
 # Fixes some weird terminal issues such as broken clear / CTRL+L
 ENV TERM=linux
