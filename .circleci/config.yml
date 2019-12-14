@@ -7,8 +7,8 @@ jobs:
       - run: |
           docker-compose -p ci build
           docker-compose -p ci up -d
-          #docker-compose -f docker-compose.test.html -p ci build
-          #docker-compose -f docker-compose.test.html -p ci up -d
+          docker-compose -f docker-compose.test.yml -p ci build
+          docker-compose -f docker-compose.test.yml -p ci up -d
 
   deploy:
     machine: true
