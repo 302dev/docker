@@ -1,16 +1,8 @@
 
-bionic-php7.2-cli:
-    build: images/bionic/php-7.2/.
-    container_name: bionic-php7.2-cli
+php7.2-cli:
+    build: images/php-7.2/.
+    container_name: php7.2-cli
 
-bionic-php7.3-cli:
-    build: images/bionic/php-7.3/.
-    container_name: bionic-php7.3-cli
-
-xenial-php7.2-cli:
-    build: images/xenial/php-7.2/.
-    container_name: xenial-php7.2-cli
-
-xenial-php7.3-cli:
-    build: images/xenial/php-7.3/.
-    container_name: xenial-php7.3-cli
+php7.3-cli:
+    build: images/php-7.3/.
+    container_name: php7.3-cli

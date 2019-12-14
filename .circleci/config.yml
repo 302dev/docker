@@ -16,16 +16,12 @@ jobs:
       - run: |
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
           docker-compose -p ci build
-          docker tag ci_bionic-php7.3-cli:latest 302dev/cakephp:latest
-          docker tag ci_bionic-php7.3-cli:latest 302dev/cakephp:bionic-7.3-cli
-          docker tag ci_bionic-php7.2-cli:latest 302dev/cakephp:bionic-7.2-cli
-          docker tag ci_xenial-php7.3-cli:latest 302dev/cakephp:xenial-7.3-cli
-          docker tag ci_xenial-php7.2-cli:latest 302dev/cakephp:xenial-7.2-cli
+          docker tag ci_php7.3-cli:latest 302dev/cakephp:latest
+          docker tag ci_php7.3-cli:latest 302dev/cakephp:7.3-cli
+          docker tag ci_php7.2-cli:latest 302dev/cakephp:7.2-cli
           docker push 302dev/cakephp:latest
-          docker push 302dev/cakephp:bionic-7.3-cli
-          docker push 302dev/cakephp:bionic-7.2-cli
-          docker push 302dev/cakephp:xenial-7.3-cli
-          docker push 302dev/cakephp:xenial-7.2-cli
+          docker push 302dev/cakephp:7.3-cli
+          docker push 302dev/cakephp:7.2-cli
 
 workflows:
   version: 2
