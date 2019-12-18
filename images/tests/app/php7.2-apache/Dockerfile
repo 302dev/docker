@@ -13,6 +13,7 @@ ADD cakephp.default.conf /etc/apache2/sites-enabled/000-default.conf
 RUN chmod -R 777 tmp
 
 RUN a2enmod rewrite
+RUN service apache2 restart
 
 RUN chmod -R 777 tmp \
     && cp phpunit.xml.dist phpunit.xml \
