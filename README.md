@@ -4,7 +4,7 @@
 
 I use citlab-ci on a local install of gitlab, and I wrote/use these [Docker](https://hub.docker.com/) images so my ci pipelines will build faster, and with less settings in my .gitlab-ci.yml.
 
-Docker repo: [302dev/cakephp](https://hub.docker.com/repository/docker/302dev/cakephp)
+Docker repo: [302dev/cakephp](https://hub.docker.com/r/302dev/cakephp)
 
 ## Currently supported.
 
