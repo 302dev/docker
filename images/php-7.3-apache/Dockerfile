@@ -1,9 +1,9 @@
-#############################
-# 302dev/cakephp:php7.2-cli #
-#############################
+################################
+# 302dev/cakephp:php7.3-apache #
+################################
 
 # @see https://hub.docker.com/_/php
-FROM php:7.2
+FROM php:7.3-apache
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
@@ -13,7 +13,7 @@ RUN apt-get update --fix-missing \
 
 # Install xdebug
 RUN pecl install xdebug \
-    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Add the extensions we need.
 RUN docker-php-ext-install gd
@@ -31,5 +31,3 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # smoke test
 RUN php --version
-
-CMD ["php", "-a"]
