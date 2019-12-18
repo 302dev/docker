@@ -8,7 +8,7 @@ FROM php:7.2
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
     && apt-get -yq install \
-        zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev \
+        zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
         unzip curl git
 
 # Install xdebug
@@ -21,6 +21,7 @@ RUN docker-php-ext-install intl
 RUN docker-php-ext-install ldap
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_sqlite
 RUN docker-php-ext-install soap
 RUN docker-php-ext-enable xdebug
 RUN docker-php-ext-install zip
