@@ -4,12 +4,15 @@
 
 FROM ci_php7.3-cli
 
-# smoke test
-RUN composer create-project --prefer-source cakephp/app:dev-master app \
-    && cd app \
-    && composer update \
+RUN composer create-project --prefer-source cakephp/app /app
+
+WORKDIR /app
+
+RUN cp phpunit.xml.dist phpunit.xml \
     && composer test
 
-EXPOSE 8765
+ADD run.sh run.sh
 
-CMD ["bin/cake", "server" "-p" "8766"]
+ENTRYPOINT run.sh
+
+EXPOSE 8765

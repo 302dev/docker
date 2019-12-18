@@ -1,9 +1,9 @@
-#############################
-# 302dev/cakephp:php7.2-cli #
-#############################
+################################
+# 302dev/cakephp:php7.2-apache #
+################################
 
 # @see https://hub.docker.com/_/php
-FROM php:7.2
+FROM php:7.2-apache
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
@@ -30,5 +30,3 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # smoke test
 RUN php --version
-
-CMD ["php", "-a"]

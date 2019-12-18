@@ -1,0 +1,12 @@
+
+test-cakephp-app-php7.2-cli:
+    build: images/tests/app/php7.2/.
+    container_name: test-cakephp-app-php7.2-cli
+    ports:
+      - "8765:8765"
+
+#test-cakephp-app-php7.3-cli:
+#    build: images/tests/app/php7.3/.
+#    container_name: test-cakephp-app-php7.3-cli
+#    ports:
+#      - "8766:8765"
