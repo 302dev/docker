@@ -9,7 +9,7 @@ FROM php:7.3-apache
 RUN apt-get update --fix-missing \
     && apt-get -yq install \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
-        unzip curl git
+        unzip curl git default-mysql-client
 
 # Install xdebug
 RUN pecl install xdebug \
