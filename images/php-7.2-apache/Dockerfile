@@ -8,6 +8,7 @@ FROM php:7.2-apache
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
     && apt-get -yq install \
+        ca-certificates \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
         unzip curl git default-mysql-client
 
