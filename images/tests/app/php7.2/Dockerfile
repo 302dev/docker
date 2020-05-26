@@ -4,15 +4,15 @@
 
 FROM ci_php7.2-cli
 
-RUN composer create-project --prefer-dist cakephp/app /app
+RUN composer create-project --prefer-dist cakephp/app /app ~3.0
 
 WORKDIR /app
 
 RUN cp phpunit.xml.dist phpunit.xml \
     && composer test
 
-ADD run.sh run.sh
+ADD run.sh /run.sh
 
-ENTRYPOINT run.sh
+ENTRYPOINT /run.sh
 
 EXPOSE 8765
