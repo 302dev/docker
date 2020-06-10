@@ -12,7 +12,9 @@ Docker repo: [302dev/cakephp](https://hub.docker.com/r/302dev/cakephp)
 | ---------- |
 | 302dev/cakephp:php7.2-cli |
 | 302dev/cakephp:php7.3-cli |
+| 302dev/cakephp:php7.4-cli |
 | 302dev/cakephp:php7.2-apache |
 | 302dev/cakephp:php7.3-apache |
+| 302dev/cakephp:php7.4-apache |
 
 I plan to add more php versions later.

@@ -11,12 +11,19 @@ test-cakephp-app-php7.3-cli:
     ports:
       - "8766:8765"
 
+test-cakephp-app-php7.4-cli:
+    build: images/tests/app/php7.4/.
+    container_name: test-cakephp-app-php7.4-cli
+    ports:
+      - "8767:8765"
+
 test-apache:
   build: tests/.
   container_name: test-apache
   links:
     - test-cakephp-app-php7.2-apache
     - test-cakephp-app-php7.3-apache
+    - test-cakephp-app-php7.4-apache
 
 test-cakephp-app-php7.2-apache:
     build: images/tests/app/php7.2-apache/.
@@ -29,3 +36,9 @@ test-cakephp-app-php7.3-apache:
     container_name: test-cakephp-app-php7.3-apache
     ports:
       - "8073:80"
+
+test-cakephp-app-php7.4-apache:
+    build: images/tests/app/php7.4-apache/.
+    container_name: test-cakephp-app-php7.4-apache
+    ports:
+      - "8074:80"
