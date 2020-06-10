@@ -14,3 +14,11 @@ php7.3-cli:
 php7.3-apache:
     build: images/php-7.3-apache/.
     container_name: php7.3-apache
+
+php7.4-cli:
+    build: images/php-7.4/.
+    container_name: php7.4-cli
+
+php7.4-apache:
+    build: images/php-7.4-apache/.
+    container_name: php7.4-apache

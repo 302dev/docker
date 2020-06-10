@@ -15,3 +15,6 @@ echo "=> Testing test-cakephp-app-php7.2-apache"
 
 echo "=> Testing test-cakephp-app-php7.3-apache"
 . test-cakephp-app-php7.3-apache.sh
+
+echo "=> Testing test-cakephp-app-php7.4-apache"
+. test-cakephp-app-php7.4-apache.sh
