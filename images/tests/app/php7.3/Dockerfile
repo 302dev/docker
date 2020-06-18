@@ -4,7 +4,7 @@
 
 FROM ci_php7.3-cli
 
-RUN composer create-project --prefer-dist cakephp/app /app ~3.0
+RUN composer create-project --prefer-dist cakephp/app /app ~4.0
 
 WORKDIR /app
 
