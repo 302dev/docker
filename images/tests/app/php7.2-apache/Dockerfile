@@ -4,7 +4,7 @@
 
 FROM ci_php7.2-apache
 
-RUN composer create-project --prefer-dist cakephp/app /var/www/html ~3.0
+RUN composer create-project --prefer-dist cakephp/app /var/www/html ~4.0
 
 WORKDIR /var/www/html
 
