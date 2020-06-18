@@ -5,37 +5,13 @@ jobs:
     steps:
       - checkout
       - run: |
-          docker-compose -p ci build
-          docker-compose -p ci up -d
-          docker-compose -f docker-compose.test.yml -p ci build
-          docker-compose -f docker-compose.test.yml -p ci up -d
-
-  deploy:
-    machine: true
-    steps:
-      - checkout
-      - run: |
-          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker-compose -p ci build
-          docker tag ci_php7.3-cli:latest 302dev/cakephp:latest
-          docker tag ci_php7.3-cli:latest 302dev/cakephp:7.3-cli
-          docker tag ci_php7.3-apache:latest 302dev/cakephp:7.3-apache
-          docker tag ci_php7.2-cli:latest 302dev/cakephp:7.2-cli
-          docker tag ci_php7.2-apache:latest 302dev/cakephp:7.2-apache
-          docker push 302dev/cakephp:latest
-          docker push 302dev/cakephp:7.3-cli
-          docker push 302dev/cakephp:7.3-apache
-          docker push 302dev/cakephp:7.2-cli
-          docker push 302dev/cakephp:7.2-apache
+        docker-compose -p ci build
+        docker-compose -p ci up -d
+        docker-compose -f docker-compose.test.yml -p ci build
+        docker-compose -f docker-compose.test.yml -p ci up -d
 
 workflows:
   version: 2
-  test-and-deploy:
+  test:
     jobs:
       - test
-      - deploy:
-          requires:
-            - test
-          filters:
-            branches:
-              only: master
