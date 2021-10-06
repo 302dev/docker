@@ -1,8 +1,8 @@
 ########################################
-# Tests cakephp/app with ci_php7.4-cli #
+# Tests cakephp/app with ci_php8.0-cli #
 ########################################
 
-FROM ci_php7.4-cli
+FROM ci_php8.0-cli
 
 RUN composer create-project --prefer-dist cakephp/app /app ~4.0
 

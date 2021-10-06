@@ -1,8 +1,8 @@
 ###########################################
-# Tests cakephp/app with ci_php7.4-apache #
+# Tests cakephp/app with ci_php8.0-apache #
 ###########################################
 
-FROM ci_php7.4-apache
+FROM ci_php8.0-apache
 
 RUN composer create-project --prefer-dist cakephp/app /var/www/html ~4.0
 

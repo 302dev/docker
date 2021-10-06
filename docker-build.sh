@@ -11,5 +11,7 @@ docker logs php7.3-cli && \
 docker logs php7.3-apache && \
 docker logs php7.4-cli && \
 docker logs php7.4-apache && \
+docker logs php8.0-cli && \
+docker logs php8.0-apache && \
 docker images && \
 docker ps -a
