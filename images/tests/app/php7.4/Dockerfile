@@ -1,5 +1,5 @@
 ########################################
-# Tests cakephp/app with ci_php7.2-cli #
+# Tests cakephp/app with ci_php7.4-cli #
 ########################################
 
 FROM ci_php7.4-cli
