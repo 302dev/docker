@@ -1,17 +1,19 @@
 version: 2
 jobs:
-  test:
-    machine: true
-    steps:
-      - checkout
-      - run: |
-          docker-compose -p ci build
-          docker-compose -p ci up -d
-          docker-compose -f docker-compose.test.yml -p ci build
-          docker-compose -f docker-compose.test.yml -p ci up -d
+    test:
+        machine: true
+        steps:
+            - checkout
+            - run:
+                name: "Testing docker images"
+                command: |
+                    docker-compose -p ci build
+                    docker-compose -p ci up -d
+                    docker-compose -f docker-compose.test.yml -p ci build
+                    docker-compose -f docker-compose.test.yml -p ci up -d
 
 workflows:
-  version: 2
-  test:
-    jobs:
-      - test
+    version: 2
+    test:
+        jobs:
+            - test
