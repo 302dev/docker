@@ -12,7 +12,11 @@ RUN apt-get update --fix-missing \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
         unzip curl git default-mysql-client
 
-RUN if [ $(grep apache /etc/group) ]; then echo "APACHE" elif [ $(grep www-data /etc/group) ]; then echo "WWW-DATA" fi
+RUN if [ $(grep apache /etc/group) ]; then \
+        echo "APACHE" \
+    elif [ $(grep www-data /etc/group) ]; then \
+        echo "WWW-DATA" \
+    fi
 
 # Install xdebug
 RUN pecl install xdebug \
