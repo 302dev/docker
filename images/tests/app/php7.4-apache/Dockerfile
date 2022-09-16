@@ -6,7 +6,7 @@ FROM ci_php7.4-apache
 
 RUN useradd docker
 
-RUN usermod −aG apache docker
+RUN usermod −aG www-data docker
 
 RUN mkdir -p /home/docker/.composer \
     && chown -R docker /home/docker/.composer
