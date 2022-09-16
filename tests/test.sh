@@ -9,12 +9,8 @@ if [ ! -d actual ]; then
     mkdir actual
 fi
 
-echo
-echo "=> Testing test-cakephp-app-php7.2-apache"
-. test-cakephp-app-php7.2-apache.sh
-
-echo "=> Testing test-cakephp-app-php7.3-apache"
-. test-cakephp-app-php7.3-apache.sh
-
 echo "=> Testing test-cakephp-app-php7.4-apache"
 . test-cakephp-app-php7.4-apache.sh
+
+echo "=> Testing test-cakephp-app-php8.0-apache"
+. test-cakephp-app-php8.0-apache.sh
