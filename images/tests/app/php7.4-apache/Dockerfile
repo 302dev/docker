@@ -4,7 +4,7 @@
 
 FROM ci_php7.4-apache
 
-RUN useradd −u 8877 docker
+RUN useradd docker
 
 RUN usermod −aG apache docker
 

@@ -4,7 +4,7 @@
 
 FROM ci_php8.0-cli
 
-RUN useradd −u 8877 docker
+RUN useradd docker
 
 USER docker
 
