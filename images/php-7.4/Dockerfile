@@ -12,8 +12,6 @@ RUN apt-get update --fix-missing \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
         unzip curl git default-mysql-client
 
-RUN if [[ $(grep apache /etc/group) ]]; then echo "APACHE"; elif [[ $(grep www-data /etc/group) ]]; then echo "WWW-DATA"; fi
-
 # Install xdebug
 RUN pecl install xdebug \
     && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini

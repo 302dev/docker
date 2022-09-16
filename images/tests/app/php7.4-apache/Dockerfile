@@ -6,7 +6,7 @@ FROM ci_php7.4-apache
 
 RUN useradd docker
 
-RUN usermod −aG www-data docker
+RUN if [[ $(grep apache /etc/group) ]]; then usermod −aG apache docker; elif [[ $(grep www-data /etc/group) ]]; then usermod −aG www-data docker; fi
 
 RUN mkdir -p /home/docker/.composer \
     && chown -R docker /home/docker/.composer
