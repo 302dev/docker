@@ -1,6 +1,0 @@
-php7.4-cli:
-    build: images/php-7.4/.
-    container_name: php7.4-cli
-php8.0-cli:
-    build: images/php-8.0/.
-    container_name: php8.0-cli
