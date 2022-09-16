@@ -18,6 +18,8 @@ RUN composer create-project --prefer-dist cakephp/app /app ~4.0
 
 WORKDIR /app
 
+RUN echo $(ls -l /usr/local/lib/php/extensions/)
+
 RUN chmod -R 777 tmp \
     && cp phpunit.xml.dist phpunit.xml \
     && composer test

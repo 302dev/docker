@@ -6,7 +6,7 @@ FROM ci_php8.0-apache
 
 RUN useradd docker
 
-RUN usermod −aG apache docker
+RUN usermod −aG www-data docker
 
 RUN mkdir -p /home/docker/.composer \
     && chown -R docker /home/docker/.composer
@@ -26,6 +26,8 @@ RUN chmod -R 777 tmp
 
 RUN sudo a2enmod rewrite
 RUN sudo service apache2 restart
+
+RUN echo $(ls -l /usr/local/lib/php/extensions/)
 
 RUN cp phpunit.xml.dist phpunit.xml \
     && composer test

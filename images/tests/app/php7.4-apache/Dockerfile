@@ -27,6 +27,8 @@ RUN chmod -R 777 tmp
 RUN sudo a2enmod rewrite
 RUN sudo service apache2 restart
 
+RUN echo $(ls -l /usr/local/lib/php/extensions/)
+
 RUN cp phpunit.xml.dist phpunit.xml \
     && composer test
 
