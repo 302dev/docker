@@ -13,9 +13,9 @@ RUN apt-get update --fix-missing \
         unzip curl git default-mysql-client
 
 RUN if[[ $(grep apache /etc/group) ]]; then \
-        echo "APACHE" \
+        echo "APACHE"; \
     elif [[ $(grep www-data /etc/group) ]]; then \
-        echo "WWW-DATA" \
+        echo "WWW-DATA"; \
     fi
 
 # Install xdebug
