@@ -8,6 +8,9 @@ RUN useradd docker
 
 RUN usermod −aG apache docker
 
+RUN mkdir -p /var/www/html \
+    && chown -R docker /var/www/html
+
 USER docker
 
 RUN composer create-project --prefer-dist cakephp/app /var/www/html ~4.0

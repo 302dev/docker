@@ -6,6 +6,9 @@ FROM ci_php8.0-cli
 
 RUN useradd docker
 
+RUN mkdir -p /app \
+    && chown -R docker /app
+
 USER docker
 
 RUN composer create-project --prefer-dist cakephp/app /app ~4.0
