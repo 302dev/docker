@@ -14,8 +14,9 @@ RUN apt-get update --fix-missing \
 
 # Install xdebug
 RUN pecl install xdebug \
-    && ls -l /usr/local/lib/php/extensions/ \
     && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini
+
+RUN ls -l /usr/local/lib/php/extensions/
 
 # Add the extensions we need.
 RUN docker-php-ext-install gd
