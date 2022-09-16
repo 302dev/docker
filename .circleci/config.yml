@@ -7,6 +7,7 @@ jobs:
             - run:
                 name: "Testing docker images"
                 command: |
+                    docker-compose --version
                     docker-compose -p ci build
                     docker-compose -p ci up -d
                     docker-compose -f docker-compose.test.yml -p ci build

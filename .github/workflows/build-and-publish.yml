@@ -42,8 +42,8 @@ jobs:
                 context: ./images/php-7.4
                 # Note: tags has to be all lower-case
                 tags: |
-                    fr3nch13702/cakephp:7.4-cli
-                    ghcr.io/302dev/docker/cakephp:7.4-cli
+                    fr3nch13702/cakephp:php7.4-cli
+                    ghcr.io/302dev/docker/cakephp:php7.4-cli
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
@@ -54,8 +54,8 @@ jobs:
                 context: ./images/php-7.4-apache
                 # Note: tags has to be all lower-case
                 tags: |
-                    fr3nch13702/cakephp:7.4-apache
-                    ghcr.io/302dev/docker/cakephp:7.4-apache
+                    fr3nch13702/cakephp:php7.4-apache
+                    ghcr.io/302dev/docker/cakephp:php7.4-apache
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
@@ -66,8 +66,8 @@ jobs:
                 context: ./images/php-8.0
                 # Note: tags has to be all lower-case
                 tags: |
-                    fr3nch13702/cakephp:8.0-cli
-                    ghcr.io/302dev/docker/cakephp:8.0-cli
+                    fr3nch13702/cakephp:php8.0-cli
+                    ghcr.io/302dev/docker/cakephp:php8.0-cli
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
@@ -78,8 +78,8 @@ jobs:
                 context: ./images/php-8.0-apache
                 # Note: tags has to be all lower-case
                 tags: |
-                    fr3nch13702/cakephp:8.0-apache
-                    ghcr.io/302dev/docker/cakephp:8.0-apache
+                    fr3nch13702/cakephp:php8.0-apache
+                    ghcr.io/302dev/docker/cakephp:php8.0-apache
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
