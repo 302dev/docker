@@ -8,6 +8,9 @@ RUN useradd docker
 
 RUN usermod −aG apache docker
 
+RUN mkdir -p /home/docker/.composer \
+    && chown -R docker /home/docker/.composer
+
 RUN mkdir -p /var/www/html \
     && chown -R docker /var/www/html
 

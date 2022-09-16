@@ -6,6 +6,9 @@ FROM ci_php7.4-cli
 
 RUN useradd docker
 
+RUN mkdir -p /home/docker/.composer \
+    && chown -R docker /home/docker/.composer
+
 RUN mkdir -p /app \
     && chown -R docker /app
 
