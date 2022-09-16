@@ -4,11 +4,16 @@
 
 FROM ci_php7.4-cli
 
+RUN useradd −u 8877 docker
+
+USER docker
+
 RUN composer create-project --prefer-dist cakephp/app /app ~4.0
 
 WORKDIR /app
 
-RUN cp phpunit.xml.dist phpunit.xml \
+RUN chmod -R 777 tmp \
+    && cp phpunit.xml.dist phpunit.xml \
     && composer test
 
 ADD run.sh /run.sh
