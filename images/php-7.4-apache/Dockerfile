@@ -8,7 +8,7 @@ FROM php:7.4-apache
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf \
     && a2enmod rewrite
 
-RUN apt search xdebug
+RUN add-apt-repository -y ppa:ondrej/php
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
