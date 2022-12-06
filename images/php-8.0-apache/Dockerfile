@@ -13,11 +13,11 @@ RUN apt-get update --fix-missing \
     && apt-get -yq install \
         ca-certificates net-tools \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
-        unzip curl git default-mysql-client
+        unzip curl git default-mysql-client php-xdebug
 
 # Install xdebug
-RUN pecl install xdebug \
-    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini
+# RUN pecl install xdebug \
+#    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN echo $(ls -l /usr/local/lib/php/extensions/)
 
