@@ -3,7 +3,7 @@
 #############################
 
 # @see https://hub.docker.com/_/php
-FROM php:8.0
+FROM php:8.0-cli
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
@@ -14,20 +14,16 @@ RUN apt-get update --fix-missing \
 
 # Install xdebug
 RUN pecl install xdebug \
-    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini
-
-RUN echo $(ls -l /usr/local/lib/php/extensions/)
-
-# Add the extensions we need.
-RUN docker-php-ext-install gd
-RUN docker-php-ext-install intl
-RUN docker-php-ext-install ldap
-RUN docker-php-ext-install mysqli
-RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install pdo_sqlite
-RUN docker-php-ext-install soap
-RUN docker-php-ext-enable xdebug
-RUN docker-php-ext-install zip
+    && docker-php-ext-enable xdebug \
+    && docker-php-ext-install gd \
+    && docker-php-ext-install intl \
+    && docker-php-ext-install ldap \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-install pdo_mysql \
+    && docker-php-ext-install pdo_sqlite \
+    && docker-php-ext-install soap \
+    && docker-php-ext-enable xdebug \
+    && docker-php-ext-install zip
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

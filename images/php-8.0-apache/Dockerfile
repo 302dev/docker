@@ -16,9 +16,6 @@ RUN apt-get update --fix-missing \
         unzip curl git default-mysql-client
 
 # Install xdebug
-# RUN pecl install xdebug \
-#    && echo "zend_extension=/usr/local/lib/php/extensions/no-debug-non-zts-20190902/xdebug.so" >> /usr/local/etc/php/conf.d/xdebug.ini
-
 RUN pecl install xdebug \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-install gd \
