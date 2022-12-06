@@ -1,12 +1,12 @@
 services:
     test-cakephp-app-php7.4-cli:
-        build: images/tests/app/php7.4/.
+        build: images/tests/app/php7.4-cli/.
         container_name: test-cakephp-app-php7.4-cli
         ports:
           - "8767:8765"
 
     test-cakephp-app-php8.0-cli:
-        build: images/tests/app/php8.0/.
+        build: images/tests/app/php8.0-cli/.
         container_name: test-cakephp-app-php8.0-cli
         ports:
           - "8768:8765"
