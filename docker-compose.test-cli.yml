@@ -10,3 +10,9 @@ services:
       container_name: test-cakephp-app-php8.0-cli
       ports:
         - "8768:8765"
+
+  test-cakephp-app-php8.1-cli:
+      build: images/tests/app/php8.1-cli/.
+      container_name: test-cakephp-app-php8.1-cli
+      ports:
+        - "8769:8765"
