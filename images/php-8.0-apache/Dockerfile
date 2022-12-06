@@ -8,11 +8,12 @@ FROM php:8.0-apache
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf \
     && a2enmod rewrite
 
+RUN apt-get update --fix-missing && apt-get install -y software-properties-common
+
 RUN add-apt-repository -y ppa:ondrej/php
 
 # Update the packages, and install the libraries need to the php extensions.
-RUN apt-get update --fix-missing \
-    && apt-get -yq install \
+RUN apt-get -yq install \
         ca-certificates net-tools \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
         unzip curl git default-mysql-client php8.0-xdebug
