@@ -12,7 +12,9 @@ Docker repo: [fr3nch13702/cakephp](https://hub.docker.com/repository/docker/fr3n
 | ---------- |
 | fr3nch13702/cakephp:php7.4-cli |
 | fr3nch13702/cakephp:php8.0-cli |
+| fr3nch13702/cakephp:php8.1-cli |
 | fr3nch13702/cakephp:php7.4-apache |
 | fr3nch13702/cakephp:php8.0-apache |
+| fr3nch13702/cakephp:php8.1-apache |
 
 I plan to add more php versions later.
