@@ -16,7 +16,7 @@ RUN apt-get update --fix-missing \
         unzip curl git default-mysql-client memcached libmemcached-dev
 
 # Install xdebug
-RUN pecl install xdebug \
+RUN pecl install xdebug-3.1.6 \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-install gd \
     && docker-php-ext-install intl \
