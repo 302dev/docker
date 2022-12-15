@@ -13,7 +13,7 @@ RUN apt-get update --fix-missing \
     && apt-get -yq install \
         ca-certificates net-tools \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
-        unzip curl git default-mysql-client memcached libmemcached-libs zlib
+        unzip curl git default-mysql-client memcached libmemcached-dev zlib
 
 # Install xdebug
 RUN pecl install xdebug \
