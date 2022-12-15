@@ -26,7 +26,7 @@ RUN pecl install xdebug \
     && docker-php-ext-install pdo_sqlite \
     && docker-php-ext-install soap \
     && docker-php-ext-install zip \
-    && docker-php-ext-install mamcached
+    && docker-php-ext-install memcached
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
