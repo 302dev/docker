@@ -10,7 +10,7 @@ RUN apt-get update --fix-missing \
     && apt-get -yq install \
         ca-certificates \
         zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
-        unzip curl git default-mysql-client
+        unzip curl git default-mysql-client memcached
 
 # Install xdebug
 RUN pecl install xdebug \
@@ -22,8 +22,8 @@ RUN pecl install xdebug \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install pdo_sqlite \
     && docker-php-ext-install soap \
-    && docker-php-ext-enable xdebug \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
+    && docker-php-ext-install mamcached
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
