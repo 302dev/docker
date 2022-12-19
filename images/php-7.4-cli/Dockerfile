@@ -14,7 +14,7 @@ RUN apt-get update --fix-missing \
         libxml2-dev libzip-dev memcached net-tools unzip zlib1g-dev
 
 # make sure the memcached server is started
-RUN systemctl start memcached
+RUN service memcached start
 
 # Install xdebug
 RUN pecl install xdebug-3.1.6 \
