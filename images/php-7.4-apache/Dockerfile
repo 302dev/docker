@@ -11,9 +11,10 @@ RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/Allo
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
     && apt-get -yq install \
-        ca-certificates net-tools \
-        zlib1g-dev libicu-dev libxml2-dev libpng-dev libzip-dev libldap-dev libsqlite3-dev \
-        unzip curl git default-mysql-client memcached libmemcached-dev
+        ca-certificates \
+        curl default-mysql-client git libicu-dev libldap-dev \
+        libmemcached-dev libmemcached-tools libpng-dev libsqlite3-dev \
+        libxml2-dev libzip-dev memcached net-tools unzip zlib1g-dev
 
 # Install xdebug
 RUN pecl install xdebug-3.1.6 \
@@ -27,10 +28,9 @@ RUN pecl install xdebug-3.1.6 \
     && docker-php-ext-install soap \
     && docker-php-ext-install zip
 
-RUN git clone -b php7 https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
-    && docker-php-ext-configure /usr/src/php/ext/memcached \ --disable-memcached-sasl \
-    && docker-php-ext-install /usr/src/php/ext/memcached \
-    && rm -rf /usr/src/php/ext/memcached
+RUN git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
+    && docker-php-ext-configure memcached \
+    && docker-php-ext-install memcached
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
