@@ -16,6 +16,9 @@ RUN apt-get update --fix-missing \
         libmemcached-dev libmemcached-tools libpng-dev libsqlite3-dev \
         libxml2-dev libzip-dev memcached net-tools unzip zlib1g-dev
 
+# make sure the memcached server is started
+RUN systemctl start memcached
+
 # Install xdebug
 RUN pecl install xdebug-3.1.6 \
     && docker-php-ext-enable xdebug \
