@@ -43,6 +43,7 @@ jobs:
                 password: ${{ secrets.GHCR_PAT }}
 
             - name: Build fr3nch13702/cakephp:php8.0-cli
+              id: docker_build
               uses: docker/build-push-action@v4
               with:
                 # relative path to the place where source code with Dockerfile is located
