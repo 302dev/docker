@@ -1,4 +1,4 @@
-name: Build and Publish 7.4 Apache
+name: Build and Publish 8.0 Apache
 
 on:
     # should build on pull requests
@@ -42,15 +42,15 @@ jobs:
                 username: ${{ github.actor }}
                 password: ${{ secrets.GHCR_PAT }}
 
-            - name: Build fr3nch13702/cakephp:php7.4-apache
+            - name: Build fr3nch13702/cakephp:php8.0-apache
               uses: docker/build-push-action@v4
               with:
                 # relative path to the place where source code with Dockerfile is located
-                context: ./images/php-7.4-apache
+                context: ./images/php-8.0-apache
                 # Note: tags has to be all lower-case
                 tags: |
-                    fr3nch13702/cakephp:php7.4-apache
-                    ghcr.io/302dev/docker/cakephp:php7.4-apache
+                    fr3nch13702/cakephp:php8.0-apache
+                    ghcr.io/302dev/docker/cakephp:php8.0-apache
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
