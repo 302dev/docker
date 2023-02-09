@@ -35,6 +35,12 @@ services:
         ports:
           - "8076:80"
 
+    test-cakephp-app-php8.2-apache:
+        build: images/tests/app/php8.2-apache/.
+        container_name: test-cakephp-app-php8.2-apache
+        ports:
+          - "8077:80"
+
     test-apache:
       build: tests/.
       container_name: test-apache
@@ -42,3 +48,4 @@ services:
         - test-cakephp-app-php7.4-apache
         - test-cakephp-app-php8.0-apache
         - test-cakephp-app-php8.1-apache
+        - test-cakephp-app-php8.2-apache

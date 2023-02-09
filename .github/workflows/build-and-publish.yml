@@ -107,5 +107,41 @@ jobs:
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
 
+            - name: Build fr3nch13702/cakephp:php8.2-cli
+              uses: docker/build-push-action@v2
+              with:
+                # relative path to the place where source code with Dockerfile is located
+                context: ./images/php-8.2
+                # Note: tags has to be all lower-case
+                tags: |
+                    fr3nch13702/cakephp:php8.2-cli
+                    ghcr.io/302dev/docker/cakephp:php8.2-cli
+                # build on feature branches, push only on main branch
+                push: ${{ github.ref == 'refs/heads/master' }}
+
+            - name: Build fr3nch13702/cakephp:php8.2-apache
+              uses: docker/build-push-action@v2
+              with:
+                # relative path to the place where source code with Dockerfile is located
+                context: ./images/php-8.2-apache
+                # Note: tags has to be all lower-case
+                tags: |
+                    fr3nch13702/cakephp:php8.2-apache
+                    ghcr.io/302dev/docker/cakephp:php8.2-apache
+                # build on feature branches, push only on main branch
+                push: ${{ github.ref == 'refs/heads/master' }}
+
+            - name: Build fr3nch13702/cakephp:php-latest
+              uses: docker/build-push-action@v2
+              with:
+                # relative path to the place where source code with Dockerfile is located
+                context: ./images/php-latest
+                # Note: tags has to be all lower-case
+                tags: |
+                    fr3nch13702/cakephp:php-latest
+                    ghcr.io/302dev/docker/cakephp:php-latest
+                # build on feature branches, push only on main branch
+                push: ${{ github.ref == 'refs/heads/master' }}
+
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}
