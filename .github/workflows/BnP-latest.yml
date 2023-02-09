@@ -54,6 +54,7 @@ jobs:
                     ghcr.io/302dev/docker/cakephp:php-latest
                 # build on feature branches, push only on main branch
                 push: ${{ github.ref == 'refs/heads/master' }}
+                load: true
 
             - name: Image digest
               run: echo ${{ steps.docker_build.outputs.digest }}
