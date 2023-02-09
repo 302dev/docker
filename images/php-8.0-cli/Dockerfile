@@ -7,6 +7,7 @@ FROM php:8.0-cli
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
+    && apt-get upgrade -y \
     && apt-get -yq install \
         ca-certificates \
         curl default-mysql-client git libicu-dev libldap-dev \
