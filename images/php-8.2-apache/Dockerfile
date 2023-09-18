@@ -15,7 +15,8 @@ RUN apt-get update --fix-missing \
         ca-certificates \
         curl default-mysql-client git libicu-dev libldap-dev \
         libmemcached-dev libmemcached-tools libpng-dev libsqlite3-dev \
-        libxml2-dev libzip-dev memcached net-tools unzip zlib1g-dev
+        libxml2-dev libzip-dev memcached net-tools unzip zlib1g-dev \
+        tidy libtidy-dev
 
 # make sure the memcached server is started
 RUN service memcached start
@@ -30,7 +31,9 @@ RUN pecl install xdebug \
     && docker-php-ext-install pdo_mysql \
     && docker-php-ext-install pdo_sqlite \
     && docker-php-ext-install soap \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip \
+    && docker-php-ext-install tidy \
+    && docker-php-ext-enable tidy
 
 RUN git clone https://github.com/php-memcached-dev/php-memcached /usr/src/php/ext/memcached \
     && docker-php-ext-configure memcached \
