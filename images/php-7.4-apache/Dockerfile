@@ -3,7 +3,7 @@
 ################################
 
 # @see https://hub.docker.com/_/php
-FROM php:7.4-apache
+FROM php:7.4-apache-bullseye
 
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf \
     && a2enmod rewrite

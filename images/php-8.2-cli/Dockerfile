@@ -3,7 +3,7 @@
 #############################
 
 # @see https://hub.docker.com/_/php
-FROM php:8.2-cli
+FROM php:8.2-cli-bullseye
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
