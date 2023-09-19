@@ -3,7 +3,9 @@
 #############################
 
 # @see https://hub.docker.com/_/php
-FROM php:latest
+# Since there isn't a latest with bullseye
+#FROM php:latest
+FROM php:cli-bullseye
 
 # Update the packages, and install the libraries need to the php extensions.
 RUN apt-get update --fix-missing \
