@@ -13,6 +13,8 @@ docker logs php8.1-cli && \
 docker logs php8.1-apache && \
 docker logs php8.2-cli && \
 docker logs php8.2-apache && \
+docker logs php8.3-cli && \
+docker logs php8.3-apache && \
 docker logs php-latest && \
 docker images && \
 docker ps -a

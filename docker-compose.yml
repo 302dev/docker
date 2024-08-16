@@ -31,6 +31,14 @@ services:
         build: images/php-8.2-apache/.
         container_name: php8.2-apache
 
+    php8.3-cli:
+        build: images/php-8.3-cli/.
+        container_name: php8.3-cli
+
+    php8.3-apache:
+        build: images/php-8.3-apache/.
+        container_name: php8.3-apache
+
     php-latest:
         build: images/php-latest/.
         container_name: php-latest
