@@ -4,7 +4,7 @@ I use gitlab-ci on a local install of gitlab, and I wrote/use these [Docker](htt
 
 Docker repo: [fr3nch13702/cakephp](https://hub.docker.com/repository/docker/fr3nch13702/cakephp)
 
-## Currently supported.
+## Currently supported
 
 | Image Name |
 | ---------- |
