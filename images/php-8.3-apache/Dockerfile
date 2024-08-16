@@ -1,9 +1,9 @@
 ################################
-# fr3nch13702/cakephp:php8.1-apache #
+# fr3nch13702/cakephp:php8.3-apache #
 ################################
 
 # @see https://hub.docker.com/_/php
-FROM php:8.1-apache-bullseye
+FROM php:8.3-apache-bullseye
 
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf \
     && a2enmod rewrite

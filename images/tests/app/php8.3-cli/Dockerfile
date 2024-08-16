@@ -1,8 +1,8 @@
 ########################################
-# Tests cakephp/app with ci_php8.1-cli #
+# Tests cakephp/app with ci_php8.3-cli #
 ########################################
 
-FROM ci_php8.1-cli
+FROM ci_php8.3-cli
 
 RUN useradd docker
 

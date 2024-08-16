@@ -1,8 +1,8 @@
 ###########################################
-# Tests cakephp/app with ci_php8.1-apache #
+# Tests cakephp/app with ci_php8.2-apache #
 ###########################################
 
-FROM ci_php8.1-apache
+FROM ci_php8.2-apache
 
 ADD cakephp.default.conf /etc/apache2/sites-enabled/000-default.conf
 
