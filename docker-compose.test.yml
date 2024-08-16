@@ -1,51 +1,102 @@
-services:
-    test-cakephp-app-php7.4-cli:
-        build: images/tests/app/php7.4-cli/.
-        container_name: test-cakephp-app-php7.4-cli
-        ports:
-          - "8767:8765"
 
-    test-cakephp-app-php8.0-cli:
-        build: images/tests/app/php8.0-cli/.
-        container_name: test-cakephp-app-php8.0-cli
-        ports:
-          - "8768:8765"
+ervices:
 
-    test-cakephp-app-php8.1-cli:
-        build: images/tests/app/php8.1-cli/.
-        container_name: test-cakephp-app-php8.1-cli
-        ports:
-          - "8769:8765"
+   test-cakephp-app-php7.4-cli:
 
-    test-cakephp-app-php7.4-apache:
-        build: images/tests/app/php7.4-apache/.
-        container_name: test-cakephp-app-php7.4-apache
-        ports:
-          - "8074:80"
+       build: images/tests/app/php7.4-cli/.
 
-    test-cakephp-app-php8.0-apache:
-        build: images/tests/app/php8.0-apache/.
-        container_name: test-cakephp-app-php8.0-apache
-        ports:
-          - "8075:80"
+       container_name: test-cakephp-app-php7.4-cli
 
-    test-cakephp-app-php8.1-apache:
-        build: images/tests/app/php8.1-apache/.
-        container_name: test-cakephp-app-php8.1-apache
-        ports:
-          - "8076:80"
+       ports:
 
-    test-cakephp-app-php8.2-apache:
-        build: images/tests/app/php8.2-apache/.
-        container_name: test-cakephp-app-php8.2-apache
-        ports:
-          - "8077:80"
+         - "8767:8765"
 
-    test-apache:
-      build: tests/.
-      container_name: test-apache
-      links:
-        - test-cakephp-app-php7.4-apache
-        - test-cakephp-app-php8.0-apache
-        - test-cakephp-app-php8.1-apache
-        - test-cakephp-app-php8.2-apache
+
+
+   test-cakephp-app-php8.0-cli:
+
+       build: images/tests/app/php8.0-cli/.
+
+       container_name: test-cakephp-app-php8.0-cli
+
+       ports:
+
+         - "8768:8765"
+
+
+
+   test-cakephp-app-php8.1-cli:
+
+       build: images/tests/app/php8.1-cli/.
+
+       container_name: test-cakephp-app-php8.1-cli
+
+       ports:
+
+         - "8769:8765"
+
+
+
+   test-cakephp-app-php7.4-apache:
+
+       build: images/tests/app/php7.4-apache/.
+
+       container_name: test-cakephp-app-php7.4-apache
+
+       ports:
+
+         - "8074:80"
+
+
+
+   test-cakephp-app-php8.0-apache:
+
+       build: images/tests/app/php8.0-apache/.
+
+       container_name: test-cakephp-app-php8.0-apache
+
+       ports:
+
+         - "8075:80"
+
+
+
+   test-cakephp-app-php8.1-apache:
+
+       build: images/tests/app/php8.1-apache/.
+
+       container_name: test-cakephp-app-php8.1-apache
+
+       ports:
+
+         - "8076:80"
+
+
+
+   test-cakephp-app-php8.2-apache:
+
+       build: images/tests/app/php8.2-apache/.
+
+       container_name: test-cakephp-app-php8.2-apache
+
+       ports:
+
+         - "8077:80"
+
+
+
+   test-apache:
+
+     build: tests/.
+
+     container_name: test-apache
+
+     links:
+
+       - test-cakephp-app-php7.4-apache
+
+       - test-cakephp-app-php8.0-apache
+
+       - test-cakephp-app-php8.1-apache
+
+       - test-cakephp-app-php8.2-apache

@@ -1,4 +1,8 @@
-#!/bin/bash
-source _helpers.sh
 
-testimage test-cakephp-app-php7.4-apache 8074
+!/bin/bash
+
+ource _helpers.sh
+
+
+
+estimage test-cakephp-app-php7.4-apache 8074
