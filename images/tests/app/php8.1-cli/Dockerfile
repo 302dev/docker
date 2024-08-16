@@ -1,5 +1,5 @@
 ########################################
-# Tests cakephp/app with ci_php8.0-cli #
+# Tests cakephp/app with ci_php8.1-cli #
 ########################################
 
 FROM ci_php8.1-cli

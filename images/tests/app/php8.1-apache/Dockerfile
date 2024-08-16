@@ -1,5 +1,5 @@
 ###########################################
-# Tests cakephp/app with ci_php8.0-apache #
+# Tests cakephp/app with ci_php8.1-apache #
 ###########################################
 
 FROM ci_php8.1-apache
