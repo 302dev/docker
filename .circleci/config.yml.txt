@@ -1,36 +1,18 @@
+version: 2
+jobs:
+    test:
+        machine: true
+        steps:
+            - checkout
+            - run:
+                name: "Testing docker images"
+                command: |
+                    docker-compose --version
+                    docker-compose -p ci build
+                    docker-compose -p ci up -d
 
-ersion: 2
-
-obs:
-
-   test:
-
-       machine: true
-
-       steps:
-
-           - checkout
-
-           - run:
-
-               name: "Testing docker images"
-
-               command: |
-
-                   docker-compose --version
-
-                   docker-compose -p ci build
-
-                   docker-compose -p ci up -d
-
-
-
-orkflows:
-
-   version: 2
-
-   test:
-
-       jobs:
-
-           - test
+workflows:
+    version: 2
+    test:
+        jobs:
+            - test

@@ -1,16 +1,8 @@
+#!/bin/bash
 
-!/bin/bash
-
-
-
- Stop any running images
-
-ocker stop $(docker ps -a -q)
-
- Runs the commands to test the images.
-
-ocker-compose -f docker-compose.test.yml -p ci build && \
-
-ocker-compose -f docker-compose.test.yml -p ci up -d && \
-
-ocker logs -f test-apache
+# Stop any running images
+docker stop $(docker ps -a -q)
+# Runs the commands to test the images.
+docker-compose -f docker-compose.test.yml -p ci build && \
+docker-compose -f docker-compose.test.yml -p ci up -d && \
+docker logs -f test-apache
